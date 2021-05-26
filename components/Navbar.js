@@ -1,8 +1,16 @@
 const NavBar = () => {
 	return (
-		<div>
-			<h1>NAVBAR</h1>
-		</div>
+		<nav>
+			<div>
+				<h1>NAVBAR</h1>
+			</div>
+
+			<a>Home</a>
+			<a>Transactions</a>
+			<a>My Profile</a>
+			<a>Login</a>
+			<a>Logout</a>
+		</nav>
 	);
 };
 
