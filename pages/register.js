@@ -1,50 +1,13 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useRegisterForm } from "../customHooks/useRegisterForm";
 
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Register.module.css";
 
 export default function Register() {
-	// useForm hook here
+	// useForm hook here // all logic done there
+	const { handleChange, handleSubmit, values, errors } = useRegisterForm();
 
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [emailAddress, setEmailAddress] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirm, setConfirm] = useState("");
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log({
-			firstName,
-			lastName,
-			emailAddress,
-			password,
-		});
-
-		fetch("https://alvinacosta-asset-mgt.herokuapp.com/api/users/register", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				firstName,
-				lastName,
-				emailAddress,
-				password,
-			}),
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-			});
-
-		setFirstName("");
-		setLastName("");
-		setEmailAddress("");
-		setPassword("");
-		setConfirm("");
-	};
-
+	// no logic here but all the UI only for register.
 	return (
 		<>
 			<Head>
@@ -54,44 +17,49 @@ export default function Register() {
 			</Head>
 			<div className="main register container">
 				<h1>Register</h1>
-				<div className="form container">
-					<form onSubmit={handleSubmit}>
-						<input
-							type="text"
-							value={firstName}
-							onChange={(e) => setFirstName(e.target.value)}
-							placeholder="Enter your first name"
-						/>
-						<input
-							type="text"
-							value={lastName}
-							onChange={(e) => setLastName(e.target.value)}
-							placeholder="Enter your lastname"
-						/>
-						<input
-							type="email"
-							value={emailAddress}
-							onChange={(e) => setEmailAddress(e.target.value)}
-							placeholder="Enter your email address"
-						/>
-						<div>
-							<input
-								type="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
-								placeholder="Enter your new password"
-							/>
-
-							<input
-								type="password"
-								value={confirm}
-								onChange={(e) => setConfirm(e.target.value)}
-								placeholder="Confirm your new password"
-							/>
-						</div>
-						<button type="submit">Register</button>
-					</form>
-				</div>
+				<form className="registerForm" onSubmit={handleSubmit}>
+					<input
+						type="text"
+						placeholder="Firstname"
+						name="firstName"
+						value={values.firstName}
+						onChange={handleChange}
+					/>
+					{errors.firstName && <small>{errors.firstName}</small>}
+					<input
+						type="text"
+						placeholder="Lastname"
+						name="lastName"
+						value={values.lastName}
+						onChange={handleChange}
+					/>
+					{errors.lastName && <small>{errors.lastName}</small>}
+					<input
+						type="email"
+						placeholder="Email Address"
+						name="emailAddress"
+						value={values.emailAddress}
+						onChange={handleChange}
+					/>
+					{errors.emailAddress && <small>{errors.emailAddress}</small>}
+					<input
+						type="password"
+						placeholder="New Password"
+						name="password"
+						value={values.password}
+						onChange={handleChange}
+					/>
+					{errors.password && <small>{errors.password}</small>}
+					<input
+						type="password"
+						placeholder="Confirm Password"
+						name="confirm"
+						value={values.confirm}
+						onChange={handleChange}
+					/>
+					{errors.confirm && <small>{errors.confirm}</small>}
+					<button type="submit">Sign Me Up</button>
+				</form>
 			</div>
 		</>
 	);
