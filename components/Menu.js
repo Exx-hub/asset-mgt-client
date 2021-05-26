@@ -10,21 +10,20 @@ const Menu = () => {
 			<Link href="/">
 				<a>Home</a>
 			</Link>
-			<Link href="/about">
+			<Link href="/transactions">
 				<a>Transactions</a>
 			</Link>
-			<Link href="/">
+			<Link href="/profile">
 				<a>My Profile</a>
 			</Link>
-			<Link href="/">
+			<Link href="/register">
 				<a>Register</a>
 			</Link>
-			<Link href="/">
+			<Link href="/login">
 				<a>Login</a>
 			</Link>
-			<Link href="/">
-				<a>Logout</a>
-			</Link>
+
+			<a onClick={() => alert("LOGGED OUT!")}>Logout</a>
 		</nav>
 	);
 };

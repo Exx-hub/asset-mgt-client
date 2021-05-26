@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<div>
 			<h1>Footerrrrr</h1>
-			{/* <ThemeChanger /> */}
+			<ThemeChanger />
 		</div>
 	);
 };
