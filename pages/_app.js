@@ -1,11 +1,23 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
+import { ThemeProvider } from "next-themes";
+import SideMenu from "../components/SideMenu";
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
+		<ThemeProvider>
+			<div className="outer-container">
+				<div className="menu-container">
+					<SideMenu />
+				</div>
+
+				<Layout>
+					{/* navbar */}
+					<Component {...pageProps} />
+					{/* Footer  */}
+				</Layout>
+			</div>
+		</ThemeProvider>
 	);
 }
 

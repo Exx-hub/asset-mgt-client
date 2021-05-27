@@ -1,16 +1,14 @@
 import { ThemeProvider } from "next-themes";
 import Footer from "./Footer";
-import Menu from "./Menu";
+import Menu from "./SideMenu";
 
 const Layout = ({ children }) => {
 	return (
-		<ThemeProvider>
-			<div className="main-container">
-				<Menu />
-				{children}
-				<Footer />
-			</div>
-		</ThemeProvider>
+		<div className="main-container">
+			{/* MainNav  */}
+			{children}
+			<Footer />
+		</div>
 	);
 };
 
