@@ -1,11 +1,11 @@
 import { ThemeProvider } from "next-themes";
 import Footer from "./Footer";
-import Menu from "./SideMenu";
+import TopNav from "./TopNav";
 
 const Layout = ({ children }) => {
 	return (
 		<div className="main-container">
-			{/* MainNav  */}
+			<TopNav />
 			{children}
 			{/* <Footer /> */}
 		</div>
