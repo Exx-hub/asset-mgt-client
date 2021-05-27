@@ -1,0 +1,9 @@
+.topNav {
+	display: flex;
+	align-items: center;
+	padding: 15px;
+}
+.topNav h3 {
+	border-bottom: 5px solid gray;
+	margin-right: auto;
+}

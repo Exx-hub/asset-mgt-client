@@ -12,17 +12,23 @@ import {
 	FaSignInAlt,
 } from "react-icons/fa";
 import { MdAssignmentInd } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 const SideMenu = () => {
 	const router = useRouter();
 	const { pathname } = useRouter();
 
-	console.log(pathname);
+	const [mounted, setMounted] = useState(false);
+
+	// When mounted on client, now we can show the UI
+	useEffect(() => setMounted(true), []);
+
+	if (!mounted) return null;
 
 	return (
 		<nav className={styles.nav}>
 			<div className="navlogo">
-				<h1>LOGOewewe</h1>
+				<h1>LOGO HERE</h1>
 			</div>
 
 			<div className={styles.navLinks}>
@@ -47,7 +53,7 @@ const SideMenu = () => {
 					onClick={() => router.push("/profile")}
 				>
 					<MdAssignmentInd />
-					<p>My Profile</p>
+					<p>Profile</p>
 				</div>
 				<div
 					className={
