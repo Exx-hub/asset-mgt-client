@@ -52,8 +52,10 @@ export const useLoginForm = () => {
 							timer: 1500,
 						});
 
+						localStorage.setItem("token", data.token);
+
 						// route to profile page
-						router.push("/");
+						// router.push("/");
 					} else {
 						Swal.fire({
 							position: "center",

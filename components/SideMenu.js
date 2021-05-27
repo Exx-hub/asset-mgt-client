@@ -78,6 +78,7 @@ const SideMenu = () => {
 			<div className={styles.logout} onClick={() => alert("LOGGED OUT!")}>
 				<FaSignOutAlt />
 			</div>
+			<ThemeChanger />
 		</nav>
 	);
 };

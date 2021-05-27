@@ -1,14 +1,14 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { useRegisterForm } from "../customHooks/useRegisterForm";
 import styles from "../styles/Register.module.css";
-
-// import styles from "../styles/Register.module.css";
 
 export default function Register() {
 	// useForm hook here // all logic done there
 	const { handleChange, handleSubmit, values, errors } = useRegisterForm();
 
 	// no logic here but all the UI only for register.
+
 	return (
 		<>
 			<Head>

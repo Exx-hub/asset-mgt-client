@@ -39,3 +39,8 @@
 	color: #747474;
 	font-size: 0.5rem;
 }
+
+[data-theme="dark"] .loginContainer button {
+	box-shadow: 2px 2px 2px gray, -2px -2px 5px gray;
+	box-shadow: none;
+}

@@ -20,11 +20,12 @@
 	border-radius: 10px;
 	padding: 10px;
 	margin: 10px;
-	box-shadow: 2px 2px 2px gray, -2px -2px 5px white;
+
 	box-shadow: 2px 2px 2px lightgray, -2px -2px 5px white;
 
-	/* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
-	/* box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px; */
+	/* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+		rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+		rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
 }
 .linkDiv p,
 .linkDiv2 p {
@@ -44,9 +45,6 @@
 
 	box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.034), -2px -2px 5px white,
 		inset 2px 2px 3px gray, inset -3px -5px 5px white;
-
-	box-shadow: lightgray 3px 3px 6px 0px inset,
-		rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .logout {
@@ -57,7 +55,16 @@
 	padding: 6px 5px 1px 5px;
 	margin: 10px;
 
-	box-shadow: 2px 2px 2px lightgray, -2px -2px 5px white;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+		rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+		rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+[data-theme="dark"] .linkDiv2 {
+	box-shadow: 1px 1px 0px gray;
+}
+[data-theme="dark"] .linkDiv {
+	box-shadow: 0px 0px 0px lightgray, -1px -1px 3px white;
 }
 
 /* // handle colors white bg or skybluish?  */
