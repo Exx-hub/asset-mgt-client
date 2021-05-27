@@ -4,6 +4,8 @@ import { loginValidate } from "../validate/loginValidate";
 
 import { useRouter } from "next/router";
 
+import Swal from "sweetalert2";
+
 export const useLoginForm = () => {
 	const router = useRouter();
 
@@ -42,11 +44,25 @@ export const useLoginForm = () => {
 					if (data.token) {
 						console.log(data.token);
 
-						alert(data.message);
+						Swal.fire({
+							position: "center",
+							icon: "success",
+							title: data.message,
+							showConfirmButton: false,
+							timer: 1500,
+						});
+
 						// route to profile page
 						router.push("/");
 					} else {
-						alert(data.message);
+						Swal.fire({
+							position: "center",
+							icon: "error",
+							title: data.message,
+							showConfirmButton: false,
+							timer: 1500,
+						});
+
 						setIsSubmitting(false);
 					}
 				})

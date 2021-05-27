@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { registerValidate } from "../validate/registerValidate";
 
+import Swal from "sweetalert2";
+
 export const useRegisterForm = () => {
 	const router = useRouter();
 
@@ -51,13 +53,30 @@ export const useRegisterForm = () => {
 				.then((data) => {
 					console.log(data);
 
-					alert("Successful registration!");
+					if (data.data) {
+						Swal.fire({
+							position: "center",
+							icon: "success",
+							title: data.message,
+							showConfirmButton: false,
+							timer: 1500,
+						});
 
-					router.push("/login");
+						router.push("/login");
+					} else {
+						console.log("registration failed");
+
+						Swal.fire({
+							position: "center",
+							icon: "error",
+							title: data.message,
+							showConfirmButton: false,
+							timer: 1000,
+						});
+					}
 				})
 				.catch((err) => {
-					console.log("registration failed");
-					alert("registration failed");
+					console.log(err);
 				});
 		}
 	}, [isSubmitting, errors, values]);
