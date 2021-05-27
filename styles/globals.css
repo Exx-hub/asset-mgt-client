@@ -38,14 +38,15 @@ a {
 	justify-content: center;
 	align-items: center;
 
-	background-color: #edf2f7;
+	/* background-color: #edf2f7; */
+
 	/* background-color: rgb(219, 217, 217); */
 
 	position: relative;
 }
 
 .main-container {
-	grid-column: span 8 / span 8;
+	grid-column: span 7 / span 7;
 
 	border: 3px solid blue;
 }

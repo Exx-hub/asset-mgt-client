@@ -11,10 +11,11 @@
 
 .linkDiv {
 	color: #919aa8;
+	color: #747474;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	background-color: #edf2f7;
+	/* background-color: #edf2f7; */
 	border: none;
 	border-radius: 10px;
 	padding: 10px;
@@ -35,7 +36,7 @@
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	background-color: #edf2f7;
+	/* background-color: #edf2f7; */
 	border: none;
 	border-radius: 10px;
 	padding: 10px;
@@ -58,3 +59,5 @@
 
 	box-shadow: 2px 2px 2px lightgray, -2px -2px 5px white;
 }
+
+/* // handle colors white bg or skybluish?  */

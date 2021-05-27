@@ -1,0 +1,34 @@
+.loginContainer {
+	/* border: 2px solid red; */
+}
+.loginContainer form {
+	display: flex;
+	flex-direction: column;
+
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.loginContainer input {
+	padding: 10px;
+	margin: 5px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+
+	box-shadow: lightgray 3px 3px 6px 0px inset,
+		rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.loginContainer button {
+	width: 97%;
+	padding: 5px;
+	margin: 10px auto;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 2px 2px 2px lightgray, -2px -2px 5px white;
+}
+.loginContainer a {
+	font-size: 0.8rem;
+	color: rgb(90, 90, 90);
+}

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useLoginForm } from "../customHooks/useLoginForm";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Login.module.css";
 
 export default function Login() {
 	// custom hook here
@@ -13,8 +13,8 @@ export default function Login() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className="main login container">
-				<h1>Login</h1>
+			<div className={styles.loginContainer}>
+				{/* <h1>Login</h1> */}
 				<form onSubmit={handleSubmit}>
 					<input
 						type="email"
@@ -33,9 +33,7 @@ export default function Login() {
 					/>
 					{errors.password && <small>{errors.password}</small>}
 					<button type="submit">Sign In</button>
-					<a href="/register" className="text-center">
-						Not yet registered? Sign up now!
-					</a>
+					<a href="/register">Not yet registered? Sign up now!</a>
 				</form>
 			</div>
 		</>
