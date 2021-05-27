@@ -1,0 +1,44 @@
+.registerContainer {
+	/* border: 5px solid rebeccapurple; */
+}
+.registerContainer form {
+	display: flex;
+	flex-direction: column;
+
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.registerContainer input {
+	padding: 10px;
+	margin: 5px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+
+	box-shadow: lightgray 3px 3px 6px 0px inset,
+		rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.registerContainer button {
+	width: 97%;
+	padding: 5px;
+	margin: 10px auto;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 2px 2px 2px lightgray, -2px -2px 5px white;
+}
+
+.registerContainer form div {
+	display: flex;
+}
+.group {
+	display: flex;
+	flex-direction: column;
+}
+
+.registerContainer small {
+	color: #747474;
+	font-size: 0.5rem;
+}
