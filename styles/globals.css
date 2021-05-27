@@ -40,6 +40,8 @@ a {
 
 	background-color: #edf2f7;
 	/* background-color: rgb(219, 217, 217); */
+
+	position: relative;
 }
 
 .main-container {

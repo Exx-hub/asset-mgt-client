@@ -2,8 +2,23 @@ import Link from "next/link";
 import ThemeChanger from "../components/ThemeChanger";
 
 import styles from "../styles/SideMenu.module.css";
+import { useRouter } from "next/router";
+
+import {
+	FaHome,
+	FaHandshake,
+	FaAddressCard,
+	FaSignOutAlt,
+	FaSignInAlt,
+} from "react-icons/fa";
+import { MdAssignmentInd } from "react-icons/md";
 
 const SideMenu = () => {
+	const router = useRouter();
+	const { pathname } = useRouter();
+
+	console.log(pathname);
+
 	return (
 		<nav className={styles.nav}>
 			<div className="navlogo">
@@ -11,30 +26,52 @@ const SideMenu = () => {
 			</div>
 
 			<div className={styles.navLinks}>
-				<Link href="/">
-					{/* icon */}
-					<a>Home</a>
-				</Link>
-				<Link href="/transactions">
-					{/* icon */}
-					<a>Transactions</a>
-				</Link>
-				<Link href="/profile">
-					{/* icon */}
-					<a>My Profile</a>
-				</Link>
-				<Link href="/register">
-					{/* icon */}
-					<a>Register</a>
-				</Link>
-				<Link href="/login">
-					<a>Login</a>
-				</Link>
+				<div
+					className={pathname === "/" ? styles.linkDiv2 : styles.linkDiv}
+					onClick={() => router.push("/")}
+				>
+					<FaHome className={styles.icon} />
+					<p>Home</p>
+				</div>
+				<div
+					className={
+						pathname === "/transactions" ? styles.linkDiv2 : styles.linkDiv
+					}
+					onClick={() => router.push("/transactions")}
+				>
+					<FaHandshake />
+					<p>Transactions</p>
+				</div>
+				<div
+					className={pathname === "/profile" ? styles.linkDiv2 : styles.linkDiv}
+					onClick={() => router.push("/profile")}
+				>
+					<MdAssignmentInd />
+					<p>My Profile</p>
+				</div>
+				<div
+					className={
+						pathname === "/register" ? styles.linkDiv2 : styles.linkDiv
+					}
+					onClick={() => router.push("/register")}
+				>
+					<FaAddressCard />
+					<p>Register</p>
+				</div>
+
+				<div
+					className={pathname === "/login" ? styles.linkDiv2 : styles.linkDiv}
+					onClick={() => router.push("/login")}
+				>
+					<FaSignInAlt />
+					<p>Login</p>
+				</div>
 			</div>
 
 			{/* <ThemeChanger /> */}
-
-			<a onClick={() => alert("LOGGED OUT!")}>Logout</a>
+			<div className={styles.logout} onClick={() => alert("LOGGED OUT!")}>
+				<FaSignOutAlt />
+			</div>
 		</nav>
 	);
 };
