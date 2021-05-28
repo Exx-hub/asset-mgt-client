@@ -6,7 +6,9 @@ import { useRouter } from "next/router";
 
 import Swal from "sweetalert2";
 
-export const useLoginForm = () => {
+export const useLoginForm = (uri) => {
+	// console.log(uri);
+
 	const router = useRouter();
 
 	const [values, setValues] = useState({ emailAddress: "", password: "" });
@@ -29,7 +31,7 @@ export const useLoginForm = () => {
 	const getUserDetails = (token) => {
 		console.log(token);
 
-		fetch(`http://localhost:3001/api/users/details`, {
+		fetch(`${uri}/api/users/details`, {
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
@@ -42,7 +44,7 @@ export const useLoginForm = () => {
 
 	useEffect(() => {
 		if (Object.keys(errors).length === 0 && isSubmitting) {
-			fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/users/login`, {
+			fetch(`${uri}/api/users/login`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

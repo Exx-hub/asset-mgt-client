@@ -4,7 +4,7 @@ import { registerValidate } from "../validate/registerValidate";
 
 import Swal from "sweetalert2";
 
-export const useRegisterForm = () => {
+export const useRegisterForm = (uri) => {
 	const router = useRouter();
 
 	const [values, setValues] = useState({
@@ -37,7 +37,7 @@ export const useRegisterForm = () => {
 		if (Object.keys(errors).length === 0 && isSubmitting) {
 			// check if email is existing first before registering
 
-			fetch("https://alvinacosta-asset-mgt.herokuapp.com/api/users/register", {
+			fetch(`${uri}/api/users/register`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

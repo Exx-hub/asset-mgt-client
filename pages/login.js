@@ -2,9 +2,17 @@ import Head from "next/head";
 import { useLoginForm } from "../customHooks/useLoginForm";
 import styles from "../styles/Login.module.css";
 
-export default function Login() {
+export const getStaticProps = () => {
+	return {
+		props: {
+			uri: process.env.API_URI,
+		},
+	};
+};
+
+export default function Login({ uri }) {
 	// custom hook here
-	const { handleChange, handleSubmit, values, errors } = useLoginForm();
+	const { handleChange, handleSubmit, values, errors } = useLoginForm(uri);
 	return (
 		<>
 			<Head>

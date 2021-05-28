@@ -3,10 +3,17 @@ import { useEffect, useState } from "react";
 import { useRegisterForm } from "../customHooks/useRegisterForm";
 import styles from "../styles/Register.module.css";
 
-export default function Register() {
-	// useForm hook here // all logic done there
-	const { handleChange, handleSubmit, values, errors } = useRegisterForm();
+export const getStaticProps = () => {
+	return {
+		props: {
+			uri: process.env.API_URI,
+		},
+	};
+};
 
+export default function Register({ uri }) {
+	// useForm hook here // all logic done there
+	const { handleChange, handleSubmit, values, errors } = useRegisterForm(uri);
 	// no logic here but all the UI only for register.
 
 	return (
