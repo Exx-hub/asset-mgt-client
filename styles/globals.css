@@ -60,3 +60,17 @@ button {
 	background-color: #f1f1f1;
 	color: black;
 }
+
+[data-theme="light"] body {
+	--color-text-primary: #27201a;
+	--color-text-secondary: #076963;
+	--color-bg-primary: #fff;
+	--color-bg-toggle: white;
+}
+
+[data-theme="dark"] body {
+	--color-text-primary: #e3e3e3;
+	--color-text-secondary: #ff6b00;
+	--color-bg-primary: #15232d;
+	--color-bg-toggle: #292929;
+}

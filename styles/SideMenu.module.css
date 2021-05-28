@@ -61,7 +61,7 @@
 }
 
 [data-theme="dark"] .linkDiv2 {
-	box-shadow: 1px 1px 0px gray;
+	box-shadow: 1px 1px 0px rgb(128, 128, 128);
 }
 [data-theme="dark"] .linkDiv {
 	box-shadow: 0px 0px 0px lightgray, -1px -1px 3px white;
