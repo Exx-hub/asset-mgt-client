@@ -5,7 +5,7 @@ import styles from "../styles/Login.module.css";
 export const getStaticProps = () => {
 	return {
 		props: {
-			uri: process.env.NEXT_PUBLIC_API_URI,
+			uri: process.env.API_URI,
 		},
 	};
 };
