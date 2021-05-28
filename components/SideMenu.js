@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ThemeChanger from "../components/ThemeChanger";
 
 import styles from "../styles/SideMenu.module.css";
 import { useRouter } from "next/router";
@@ -78,7 +77,6 @@ const SideMenu = () => {
 			<div className={styles.logout} onClick={() => alert("LOGGED OUT!")}>
 				<FaSignOutAlt />
 			</div>
-			<ThemeChanger />
 		</nav>
 	);
 };

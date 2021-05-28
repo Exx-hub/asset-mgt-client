@@ -17,7 +17,7 @@ export default function TopNav() {
 	return (
 		<div className={styles.topNav}>
 			<h3>{active}</h3>
-			{/* <ThemeChanger /> */}
+			<ThemeChanger />
 		</div>
 	);
 }

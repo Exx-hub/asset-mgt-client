@@ -26,9 +26,23 @@ export const useLoginForm = () => {
 		setIsSubmitting(true);
 	};
 
+	const getUserDetails = (token) => {
+		console.log(token);
+
+		fetch(`http://localhost:3001/api/users/details`, {
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
+	};
+
 	useEffect(() => {
 		if (Object.keys(errors).length === 0 && isSubmitting) {
-			fetch("https://alvinacosta-asset-mgt.herokuapp.com/api/users/login", {
+			fetch(`${process.env.NEXT_PUBLIC_API_URI}/api/users/login`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -40,9 +54,9 @@ export const useLoginForm = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
+					// console.log(data);
 					if (data.token) {
-						console.log(data.token);
+						// console.log(data.token);
 
 						Swal.fire({
 							position: "center",
@@ -56,6 +70,8 @@ export const useLoginForm = () => {
 
 						// route to profile page
 						// router.push("/");
+
+						// getUserDetails(localStorage.getItem("token"));
 					} else {
 						Swal.fire({
 							position: "center",
@@ -69,7 +85,7 @@ export const useLoginForm = () => {
 					}
 				})
 				.catch((err) => {
-					console.log(err);
+					// console.log(err);
 				});
 		}
 	}, [isSubmitting, values, errors]);
