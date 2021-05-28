@@ -56,7 +56,7 @@ export const useLoginForm = (uri) => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
+					// console.log(data);
 					if (data.token) {
 						// console.log(data.token);
 
@@ -73,7 +73,7 @@ export const useLoginForm = (uri) => {
 						// route to profile page
 						// router.push("/");
 
-						// getUserDetails(localStorage.getItem("token"));
+						getUserDetails(localStorage.getItem("token"));
 					} else {
 						Swal.fire({
 							position: "center",
