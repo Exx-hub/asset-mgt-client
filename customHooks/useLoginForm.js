@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 
 export const useLoginForm = (uri) => {
-	// console.log(uri);
+	console.log(uri);
 
 	const router = useRouter();
 
