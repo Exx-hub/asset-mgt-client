@@ -58,7 +58,7 @@ export const useLoginForm = (uri) => {
 				.then((data) => {
 					// console.log(data);
 					if (data.token) {
-						// console.log(data.token);
+						console.log(data.token);
 
 						Swal.fire({
 							position: "center",
