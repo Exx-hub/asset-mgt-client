@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 
 export const useLoginForm = (uri) => {
-	// console.log(uri);
+	console.log(uri);
 
 	const router = useRouter();
 
@@ -70,10 +70,10 @@ export const useLoginForm = (uri) => {
 
 						localStorage.setItem("token", data.token);
 
-						// route to profile page
-						// router.push("/");
-
 						getUserDetails(localStorage.getItem("token"));
+
+						// route to profile page
+						router.push("/");
 					} else {
 						Swal.fire({
 							position: "center",
