@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "../styles/SideMenu.module.css";
 import { useRouter } from "next/router";
 
+import Image from "next/image";
+
 import {
 	FaHome,
 	FaHandshake,
@@ -26,8 +28,8 @@ const SideMenu = () => {
 
 	return (
 		<nav className={styles.nav}>
-			<div className="navlogo">
-				<h1>LOGO HERE</h1>
+			<div className={styles.navLogo}>
+				<Image src={"/logo1.png"} width={120} height={120} />
 			</div>
 
 			<div className={styles.navLinks}>
